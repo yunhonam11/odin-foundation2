@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <title> Rock Paper Scissors </title>
+    <link rel="icon" href="./images/rps-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- intro page -->
+    <img class="rps-main" src="./images/rps-main.jpg" alt="failed to load" />
+    <button class="info-button" onclick="info()"> Info </button>
+    <button class="start-game" onclick="startGame()"> Start Game </button>
+    <!-- info page -->
+    <button class="return-main" onclick="returnMain()"> Return to Main Menu </button>
+    <p class="info"> 
+        This is a simple game. You click a button that is either rock, paper, or scissors.
+        The AI player will simultaneously randomly pick one of its three. 
+        Your score and AI's score are kept in track. There is no endgame. You just keep playing forever. </p> 
+    <!-- game page -->
+    <img class="player-img" src="./images/player.jpg" alt="failed to load" />
+    <img class="ai-img" src="./images/ai.png" alt="failed to load" /> <br>
+    <img class="rock" src="./images/rock.jpg" alt="failed to load" onclick="rock()" />
+    <img class="paper" src="./images/paper.jpg" alt="failed to load" onclick="paper()" />
+    <img class="scissors" src="./images/scissors.jpg" alt="failed to load" onclick="scissors()" /> <br>
+    <p class="p-score"> </p> 
+    <p class="ai-score"> </p><br>
+    <p class="p-text">  </p>
+    <p class="outcome">  </p>
+    <p class="ai-text">  </p>
+    <script>
+        var playerScore = 0;
+        var aiScore = 0;
+
+        function rock()
+        {
+            move(0);
+        }
+
+        function paper()
+        {
+            move(1);
+        }
+
+        function scissors()
+        {
+            move(2);
+        }
+
+        function move(pHand)
+        {
+            var aiHand = Math.floor(Math.random() * 3); // 0 = rock, 1 = paper, 2 = scissors
+            if (aiHand == 0)
+            {
+                document.getElementsByClassName("ai-text")[0].innerHTML = "AI picked Rock";
+                if (pHand == 0) // tie
+                {
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Rock";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You tied!";
+                } else if (pHand == 1) { // win
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Paper";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You win!";
+                    playerScore++;
+                } else if (pHand == 2) { // lose
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Scissors";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You lose!";
+                    aiScore++;
+                }
+            } else if (aiHand == 1) {
+                document.getElementsByClassName("ai-text")[0].innerHTML = "AI picked Paper";
+                if (pHand == 0) // lose
+                {
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Rock";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You lose!";
+                    aiScore++;
+                } else if (pHand == 1) { // tie
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Paper";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You tied!";
+                } else if (pHand == 2) { // win
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Scissors";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You win!";
+                    playerScore++;
+                }
+            } else {
+                document.getElementsByClassName("ai-text")[0].innerHTML = "AI picked Scissors";
+                if (pHand == 0) // win
+                {
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Rock";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You win!";
+                    playerScore++;
+                } else if (pHand == 1) { // lose
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Paper";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You lose!";
+                    aiScore++;
+                } else if (pHand == 2) { // tie
+                    document.getElementsByClassName("p-text")[0].innerHTML = "You picked Scissors";
+                    document.getElementsByClassName("outcome")[0].innerHTML = "You tied!";
+                }
+            }
+            document.getElementsByClassName("p-score")[0].innerHTML = "Score: " + playerScore;
+            document.getElementsByClassName("ai-score")[0].innerHTML = "Score: " + aiScore;
+        }
+
+        function info()
+        {
+            document.getElementsByClassName("rps-main")[0].style.display = "none";
+            document.getElementsByClassName("info-button")[0].style.display = "none";
+            document.getElementsByClassName("start-game")[0].style.display = "none";
+
+            document.getElementsByClassName("return-main")[0].style.display = "block";
+            document.getElementsByClassName("info")[0].style.display = "block";
+        }
+
+        function returnMain()
+        {
+            document.getElementsByClassName("return-main")[0].style.display = "none";
+            document.getElementsByClassName("info")[0].style.display = "none";
+
+            document.getElementsByClassName("rps-main")[0].style.display = "block";
+            document.getElementsByClassName("info-button")[0].style.display = "block";
+            document.getElementsByClassName("start-game")[0].style.display = "block";
+        }
+
+        function startGame()
+        {
+            document.getElementsByClassName("rps-main")[0].style.display = "none";
+            document.getElementsByClassName("info-button")[0].style.display = "none";
+            document.getElementsByClassName("start-game")[0].style.display = "none";
+
+            document.getElementsByClassName("player-img")[0].style.display = "inline-block";
+            document.getElementsByClassName("ai-img")[0].style.display = "inline-block";
+            document.getElementsByClassName("rock")[0].style.display = "inline-block";
+            document.getElementsByClassName("paper")[0].style.display = "inline-block";
+            document.getElementsByClassName("scissors")[0].style.display = "inline-block";
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,180 @@
+*
+{
+    overflow: hidden;
+}
+
+.rps-main
+{
+    width: 29rem;
+    height: 29rem;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+}
+
+.info-button
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.25rem;
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 6px;
+    font-family: "copperplate", "papyrus";
+    color: white;
+    background-color: #D2691E;
+    cursor: pointer;
+}
+
+.start-game
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 6px;
+    font-family: "copperplate", "papyrus";
+    color: white;
+    background-color: darkslategrey;
+    cursor: pointer;
+}
+
+.return-main
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1rem;
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 6px;
+    font-family: "copperplate", "papyrus";
+    color: white;
+    background-color: #CD5C5C;
+    cursor: pointer;
+    display: none;
+}
+
+.info
+{
+    display: none;
+    font-family: "copperplate", "papyrus";
+    margin-top: 2.5rem;
+    font-size: 20px;
+    text-align: center;
+}
+
+.player-img
+{
+    width: 15rem;
+    height: 15rem;
+    margin-top: 2.5rem;
+    margin-left: 23rem;
+    display: none;
+}
+
+.ai-img
+{
+    width: 15rem;
+    height: 15rem;
+    margin-left: 10rem;
+    display: none;
+}
+
+.rock
+{
+    margin-top: 1.5rem;
+    margin-left: 36.5rem;
+    border: 1px solid gray;
+    border-radius: 16px;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.rock:hover
+{
+    border: 1px solid red;
+}
+
+.paper
+{
+    margin-left: 1rem;
+    border: 1px solid gray;
+    border-radius: 16px;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.paper:hover
+{
+    border: 1px solid red;
+}
+
+.scissors
+{
+    margin-left: 1rem;
+    border: 1px solid gray;
+    border-radius: 16px;
+    width: 3.5rem;
+    height: 3.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.scissors:hover
+{
+    border: 1px solid red;
+}
+
+.p-text
+{
+    margin-top: 2rem;
+    margin-left: 23.5rem;
+    display: inline-block;
+    font-family: Apple Chancery, cursive;
+    color: #2F4F4F;
+}
+
+.outcome
+{
+    margin-top: 2rem;
+    margin-left: 10rem;
+    display: inline-block;
+    font-family: Apple Chancery, cursive;
+    color: #8B0000
+}
+
+.ai-text
+{
+    margin-top: 2rem;
+    margin-left: 10rem;
+    display: inline-block;
+    font-family: Apple Chancery, cursive;
+    color: #2F4F4F;
+}
+
+.p-score
+{
+    margin-top: 2rem;
+    margin-left: 28rem;
+    font-family: Apple Chancery, cursive;
+    color: #FF6347;
+    display: inline-block;
+}
+
+.ai-score
+{
+    margin-top: 2rem;
+    margin-left: 22rem;
+    font-family: Apple Chancery, cursive;
+    color: #FF6347;
+    display: inline-block;
+}
