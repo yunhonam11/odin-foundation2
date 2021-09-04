@@ -10,3 +10,5 @@ https://www.theodinproject.com/paths/foundations/courses/foundations/lessons/roc
 This application is made with HTML, CSS, and Javascript.
 This application uses Javascript to "change" pages (its contents) instead of using <a> tag 
 to link to different HTML files.
+  
+Link to live website: https://yunhonam11.github.io/odin-foundation2/index.html
